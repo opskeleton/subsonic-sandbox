@@ -1,0 +1,14 @@
+{
+  "name": "puppet-subsonic",
+  "version": "0.1.0",
+  "author": "narkisr",
+  "summary": "Setting up http://www.subsonic.org/pages/index.jsp",
+  "license": "Apache 2.0",
+  "source": "git@github.com:pulling-strings/puppet-subsonic.git",
+  "project_page": "https://github.com/pulling-strings/puppet-subsonic",
+  "issues_url": "https://github.com/pulling-strings/puppet-subsonic",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+

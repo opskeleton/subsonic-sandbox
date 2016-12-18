@@ -1,3 +1,3 @@
-node 'subsonic.local' {
-
+node default {
+  include subsonic
 }
