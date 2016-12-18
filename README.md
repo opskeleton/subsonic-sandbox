@@ -1,5 +1,5 @@
 # Intro 
-This project manages a sandbox for [subsonic](url)
+This project manages a sandbox for [subsonic](http://www.subsonic.org/pages/index.jsp)
 
 # Usage
 ```bash
