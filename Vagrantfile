@@ -17,11 +17,10 @@ Vagrant.configure("2") do |config|
 
   device = ENV['VAGRANT_BRIDGE'] || 'eth0'
   pool = ENV['VAGRANT_POOL']
+  env  = ENV['PUPPET_ENV'] || 'dev'
 
   config.vm.define :subsonic do |node|
 
-    env  = ENV['PUPPET_ENV']
-    env ||= 'dev'
 
     node.vm.provider 'libvirt'
     node.vm.box = 'ubuntu-16.04_puppet-3.8.7'
@@ -34,6 +33,7 @@ Vagrant.configure("2") do |config|
 	domain.cpus = 2
 	domain.storage_pool_name = pool if pool
 	o.vm.synced_folder './', '/vagrant', type: 'nfs'
+	o.vm.network :public_network, :bridge => device , :dev => device
     end
 
     node.vm.provision :shell, :inline => update_ubuntu
