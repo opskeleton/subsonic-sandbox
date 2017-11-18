@@ -1,10 +1,10 @@
 # Setting up subsonic please see http://www.subsonic.org/pages/installation.jsp#debian
 class subsonic {
 
-  $version = '6.0'
+  $version = '6.1.3'
 
-  $url = 'http://subsonic.org/download'
-
+  $url= 'https://s3-eu-west-1.amazonaws.com/subsonic-public/download'
+  
   $deb  = "subsonic-${version}.deb"
 
   exec{'download subsonic deb':
@@ -23,6 +23,12 @@ class subsonic {
     ensure   => latest,
     source   => "/usr/src/${deb}",
     provider => dpkg,
+  } ~>
+
+  service{'subsonic':
+    ensure    => running,
+    enable    => true,
+    hasstatus => true,
   }
 
 }
