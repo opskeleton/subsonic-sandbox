@@ -3,7 +3,7 @@
  - yaml
  - module_data
 :logger: console
-:hierarchy:  
+:hierarchy:
  - '%{::virtual}'
  - common
 :yaml:
